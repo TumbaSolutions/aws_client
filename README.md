@@ -1,3 +1,15 @@
+# Purpose of this fork
+This fork contains a fix for https://github.com/agilord/aws_client/issues/402
+The canonical url hash in `_sign.dart -> signAws4HmacSha256` is encoded twice.
+This leads to `SignatureDoesNotMatch` AWS S3 error when getting / putting resources with
+special characters.
+
+There is an open PR with the fix that is not yet merged (1 year old PR):
+https://github.com/agilord/aws_client/pull/403 .
+
+The PR branch is not agains latest release and this is why we fork the `aws_client` repo.
+To use this branch as a dependency with a fix.
+
 # High-level APIs for Amazon Web Services (AWS) in Dart
 
 ## Development
